@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Action: A Board Game About Work, Rent and Pay</title>
+<link rel="stylesheet" href="style.css?v=13">
+</head>
+<body>
+
+
+<div id="startScreen" class="overlay">
+ <div class="start-card">
+  <div class="logo">CLASS <span>ACTION</span></div>
+  <p class="tagline">A game about what it is like to be the working class or the capitalist</p>
+  <p class="start-desc">
+   At the start of the game you are given a class at random. If you get the bourgeoisie you own
+   businesses and apartments, you set pay and working conditions, and you collect rent and profit.
+   If you get the proletariat you have to take a job, rent a place to live, and pay your bills
+   from your wages. Press play and see which one you get.
+  </p>
+  <button id="playBtn" class="play-btn">PLAY</button>
+ </div>
+</div>
+
+
+<div id="roleScreen" class="overlay hidden">
+ <div class="start-card">
+  <p class="dealt-label">Your class is</p>
+  <div id="roleTitle" class="role-title">PROLETARIAT</div>
+  <p id="roleDesc" class="start-desc"></p>
+  <button id="startGameBtn" class="play-btn">Start Month 1</button>
+ </div>
+</div>
+
+
+<div id="gameScreen" class="hidden">
+ <header class="topbar">
+  <div class="logo logo-small">CLASS <span>ACTION</span></div>
+  <div id="roleBadge" class="role-badge"></div>
+  <div id="monthBadge" class="month-badge">Month 1 / 8</div>
+  <button id="soundBtn" class="ghost-btn">Sound: on</button>
+  <button id="restartBtn" class="ghost-btn"> New game (re-roll class)</button>
+ </header>
+
+ <main class="layout">
+  
+  <aside class="panel feed-panel">
+   <h2>Events</h2>
+   <div id="feed" class="feed"></div>
+  </aside>
+
+  
+  <section class="board-wrap">
+   <div id="board" class="board">
+    <div class="board-centre">
+     <div id="diceRow" class="dice-row">
+      <div id="die1" class="die">⚀</div>
+      <div id="die2" class="die">⚀</div>
+     </div>
+     <div id="centreMsg" class="centre-msg">Your move.</div>
+     <button id="rollBtn" class="roll-btn">Roll dice</button>
+     <div id="tileInfo" class="tile-info"></div>
+    </div>
+   </div>
+  </section>
+
+  
+  <aside class="panel player-panel">
+   <h2 id="playerPanelTitle">You</h2>
+   <div id="statsBox" class="stats-box"></div>
+   <div class="meter-label" id="meterLabel"><span id="meterName">Tension</span><span id="meterVal"></span></div>
+   <div class="meter" id="meterBar"><div id="meterFill" class="meter-fill"></div></div>
+   <div id="assetsBox" class="assets-box"></div>
+   <div id="actionBox" class="action-box"></div>
+  </aside>
+ </main>
+</div>
+
+
+<div id="modalOverlay" class="overlay hidden">
+ <div class="modal" id="modalBox"></div>
+</div>
+
+<script src="game.js?v=18"></script>
+</body>
+</html>
