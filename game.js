@@ -601,7 +601,7 @@ function resolveTile(){
       break;
     case "union":
       if(G.role === "prole") choiceCard(" Union Hall", "Workers from a few workplaces are meeting here. People are comparing pay and talking about what to do next.",
-        [["Organise and make a plan", "You make a plan with other workers.", () => { G.solidarity = clamp(G.solidarity + 14, 0, 100); G.happiness = clamp(G.happiness + 5, 0, 100); }],
+        [["Organize and make a plan", "You make a plan with other workers.", () => { G.solidarity = clamp(G.solidarity + 14, 0, 100); G.happiness = clamp(G.happiness + 5, 0, 100); }],
          ["Stop work this week", "Win and pay goes up.", () => bossClash("Stop work after the meeting", "Workers from your job stop work after the meeting. Your boss did not think this many people would do it.")]]);
       else { G.tension = clamp(G.tension + 6, 0, 100); feed("Some of your workers went to a meeting at Union Hall. Worker anger goes up by 6.", "warn"); if(Math.random() < 0.35) setTimeout(() => workersClash("Workers come back from Union Hall", "Your workers came back from the meeting together. They have a list of demands and they are not splitting up."), 350); }
       break;
@@ -613,7 +613,7 @@ function resolveTile(){
       else feed("You walk past the courthouse. Nothing happens today.", "info");
       break;
     case "overtime":
-      choiceCard("⏰ Overtime?", G.role === "prole" ? "Your boss asks if you want to work this weekend. You would earn extra money and lose your days off." : "You can ask your staff to work this weekend. You would earn more money and your workers would get less rest.",
+      choiceCard("Overtime?", G.role === "prole" ? "Your boss asks if you want to work this weekend. You would earn extra money and lose your days off." : "You can ask your staff to work this weekend. You would earn more money and your workers would get less rest.",
         G.role === "prole"
           ? [["Take it (+$130)", "Health goes down by 7.", () => { G.money += 130; G.health = clamp(G.health-7,0,100); G.happiness = clamp(G.happiness-5,0,100); }],
              ["Refuse", "Keep the weekend.", () => { G.happiness = clamp(G.happiness+6,0,100); }]]
@@ -708,11 +708,11 @@ function breakingPoint(){
   G.phase = "epilogue"; G.epilogueLeft = CFG.epilogueMonths;
   showModal(`<h2> Breaking point</h2>
     <p>${G.role === "bourg"
-      ? "Your workers are tired of low pay, injuries and lawsuits. They have organised together and they want the workplaces run a different way."
-      : "Rent is high, pay is low and the conditions at work are bad. Your coworkers have organised together and want the workplaces run a different way."}</p>
+      ? "Your workers are tired of low pay, injuries and lawsuits. They organized together and they want the workplaces run a different way."
+      : "Rent is high, pay is low and the conditions at work are bad. Your coworkers have organized together and want the workplaces run a different way."}</p>
     <p>You will play <b>${CFG.epilogueMonths} more months</b> with the option you pick, so you can see what changes.</p>
-    ${choiceBtn(" Turn the workplaces into worker co-ops", "The workers own the workplace together. They vote on conditions and the profit gets shared between the people who work there.")}
-    ${choiceBtn(" Reform the old system", "Rent rises get capped and the lowest wages go up. The owners still own the businesses and the apartments.")}
+    ${choiceBtn(" Turn the workplaces into worker co-ops", "The workers own the workplace together. They vote on conditions and the profit gets shared between workers.")}
+    ${choiceBtn(" Reform the old system", "Rent rises getlimited and the wages go up. The bourgeoisie still own the businesses and the apartments.")}
     ${choiceBtn(" Keep things the same", "You change nothing and keep running things the way you have been.")}`);
   wireChoices(i => {
     G.resolution = ["coop","reform","double"][i];
