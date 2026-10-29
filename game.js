@@ -689,8 +689,8 @@ function breakingPoint(){
   G.phase = "epilogue"; G.epilogueLeft = CFG.epilogueMonths;
   showModal(`<h2> Breaking point</h2>
     <p>${G.role === "bourg"
-      ? "Your workers are tired of low pay, injuries and lawsuits. They have organised together and they want the workplaces run a different way."
-      : "Rent is high, pay is low and the conditions at work are bad. Your coworkers have organised together and want the workplaces run a different way."}</p>
+      ? "Your workers are tired of bad working conditions and low wagess. They have organized together and they want the workplaces changed."
+      : "Rent keeps climbing, pay is low and working conditions are only getting worse. Your coworkers have organized together and want the workplaces run a different way."}</p>
     <p>You will play <b>${CFG.epilogueMonths} more months</b> with the option you pick, so you can see what changes.</p>
     ${choiceBtn(" Communism", "No private owners. Workplaces and homes belong to everyone together. People vote on decisions. Pay is shared more evenly and rent to a private landlord ends.")}
     ${choiceBtn(" Socialism", "Big workplaces are owned by the public and their workers. The bourgeoisie loses the big businesses. Rent is capped and health care and buses are paid for with taxes. People still earn wages.")}
